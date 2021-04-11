@@ -1,0 +1,26 @@
+to create new project -> django-admin startproject firstProj
+to start server -> python manage.py runsever
+detect changes if done  in database schema->python manage.py makemigrations
+   create default table for authentication provided by django--> python manage.py migrate
+create a super user --> python manage.py createsuperuser
+
+now when we create model 
+ then 
+  step 1 :class Contact(models.Model):
+    name = models.CharField(max_length=122)
+    email = models.CharField(max_length=122)
+    desc = models.TextField(max_length=200)
+  step 2 :register your model in admin.py file of home(folder i.e is ur app folder)
+  admin.site.register(Contact)
+  step 3: register ur app in settimgs of project folder i.e goto project settings and add --1
+  INSTALLED_APPS = [
+    'home.        apps.           HomeConfig', --1,
+      |              |               |
+   ur appnaname   appfile         class name in app file
+     ]
+   step 4: run command python manage.py makemigrations
+          this create a model Contact
+          i.e Migrations for 'home':
+                  home\migrations\0001_initial.py
+                     - Create model Contact
+   step 5: now finally this command create migrate python manage.py migrate

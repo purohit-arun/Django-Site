@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block title %} ABOUT {% endblock title %}
+ {% block body %}
+<div class="container-fluid px-0">
+  <img
+    class="card-img-top d-block w-100"
+    src="/static/img/contactus.jfif"
+    data-holder-rendered="true"
+  />
+  <h1 style="position: absolute; top: 200px; left: 42px">Contact Us</h1>
+</div>
+<div class="container my-4">
+  <form method="post" action="/about/"> 
+	{% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+		    name="name1"
+        aria-describedby="emailHelp"
+      />
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+	    	name="email1"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="feedback" class="form-label">Feedback</label>
+	  <textarea style="resize:none;" class="form-control" name="feedback" id="feedback" cols="30" rows="10"></textarea>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    {% comment %} <button type="submit" class="btn btn-primary">Submit</button> {% endcomment %}
+	<input type="submit" class="btn btn-primary" name="sbt" value="Submit">
+  </form>
+</div>
+{% endblock body %}
