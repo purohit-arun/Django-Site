@@ -24,3 +24,9 @@ now when we create model
                   home\migrations\0001_initial.py
                      - Create model Contact
    step 5: now finally this command create migrate python manage.py migrate
+
+   python orm--> python manage.py shell
+                --> return query settimgs 
+                  >>> from home.models import Contact # import model
+                  >>>  Contact.objects.all() # return query set
+                  result:<QuerySet [<Contact: Arun Purohit>, <Contact: arun>, <Contact: Amit Purohit>]>
